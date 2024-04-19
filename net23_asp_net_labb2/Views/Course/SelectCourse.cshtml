@@ -1,0 +1,19 @@
+﻿@model SelectCourseViewModel
+@{
+    ViewData["Title"] = "Update Teacher for Student";
+}
+
+<h2>Select Course</h2>
+<h3>Student: @Model.Student.Name</h3>
+
+<form asp-action="SelectCourse">
+    <div class="form-group">
+        <label asp-for="CourseId">Select Course:</label>
+        <select asp-for="CourseId" asp-items="@Model.CourseList"></select>
+    </div>
+
+    <input type="hidden" asp-for="StudentId" value="@Model.StudentId" />
+    <input type="hidden" asp-for="Student" value="@Model.Student" />
+
+    <button type="submit" class="btn btn-primary">Next</button>
+</form>

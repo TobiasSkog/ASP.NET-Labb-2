@@ -1,0 +1,40 @@
+﻿@model net23_asp_net_labb2.Models.FindTeacherByCourseViewModel
+@{
+    ViewData["Title"] = "Results";
+}
+
+<h1>Results for @Model.CourseName</h1>
+<hr />
+@if(Model.Teachers.Count > 0)
+{
+    <div>
+    @foreach(var item in Model.Teachers){
+        
+        <dl class="row">
+            <dt class="col-sm-4">
+                @Html.DisplayFor(modelItem => item.Name)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(modelItem => item.Name)
+            </dd>
+
+
+            <dt class="col-sm-4">
+                @Html.DisplayNameFor(modelItem => item.Id)
+            </dt>
+            <dd class="col-sm-8">
+                @Html.DisplayFor(modelItem => item.Id)
+            </dd>
+        </dl>
+    }
+    </div>
+}
+else
+{
+    <div>
+        <p>Nothing found.</p>
+    </div>
+}
+<div class="mt-4">
+    <a asp-action="Index">Back</a>
+</div>

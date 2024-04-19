@@ -1,0 +1,31 @@
+﻿@model List<StudentWithAllTeachersViewModel>
+@{
+    ViewData["Title"] = "Results";
+}
+
+<h2>Students and their Teachers</h2>
+<hr />
+@if (Model.Count > 0)
+{
+    @foreach (var studentWithTeachers in Model)
+    {
+        <div>
+            <h3>@studentWithTeachers.Student.Name</h3>
+            <ul>
+                @foreach (var teacher in studentWithTeachers.Teachers)
+                {
+                    <li>@teacher.Name</li>
+                }
+            </ul>
+        </div>
+    }
+}
+else
+{
+    <div>
+        <p>Nothing found.</p>
+    </div>
+}
+<div class="mt-4">
+    <a asp-action="Index">Back</a>
+</div>

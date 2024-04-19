@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Find students based on subject";
+}
+
+<h4>Choose a subject to view all students taking that course.</h4>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="GetAllStudentsByCourseWithTeachers">
+            <div class="form-group">
+                <label class="control-label">Subject:</label>
+                <select class="form-control" name="courseId" asp-items="ViewBag.CourseId"></select>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="GetAllStudentsByCourseWithTeachers" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-action="Index">Back</a>
+</div>

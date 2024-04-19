@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Courses";
+}
+
+<h1>Select an option</h1>
+
+<div class="d-flex flex-column justify-content-center">
+    <a asp-action="FindTeacherBySubject" class="p-1">Get all teachers in a subject</a>
+    <a asp-action="GetAllStudentsWithTeachers" class="p-1">Get all students and their teachers</a>
+    <a asp-action="GetAllStudentsByCourseWithTeachers" class="p-1">Get all students taking a course</a>
+    <a asp-action="GetAllCourses" class="p-1">List all courses - allows editing course names</a>
+    <a asp-action="UpdateTeacherForStudentInCourse" class="p-1">Update a students teacher in a course</a>
+</div>
+
